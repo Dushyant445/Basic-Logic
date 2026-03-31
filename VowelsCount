@@ -1,0 +1,22 @@
+using System;
+
+class Dushyant
+{
+    static void Main()
+    {
+        string str = "Dushyant";
+        int count = 0;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            char ch = char.ToLower(str[i]);
+
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            {
+                count++;
+            }
+        }
+
+        Console.WriteLine("Total vowels: " + count);
+    }
+}
