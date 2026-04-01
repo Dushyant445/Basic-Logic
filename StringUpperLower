@@ -1,0 +1,19 @@
+using System;
+
+namespace StringUpperLower
+{
+    class Dushyant
+    {
+        public static void Main()
+        {
+            Console.Write("Enter a String:");
+            string str = Console.ReadLine();
+
+            string upper = str.ToUpper();
+            string lower = str.ToLower();
+
+            Console.WriteLine("Uppercase: " + upper);
+            Console.WriteLine("Lowecase:" + lower);
+        }
+    }
+}
