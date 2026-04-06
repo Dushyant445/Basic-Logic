@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string str = "programming";
+        string result = "";
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            bool isDuplicate = false;
+
+            // check karo pehle aa chuka hai ya nahi
+            for (int j = 0; j < i; j++)
+            {
+                if (str[i] == str[j])
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            // agar duplicate nahi hai to add karo
+            if (!isDuplicate)
+            {
+                result += str[i];
+            }
+        }
+
+        Console.WriteLine("After removing duplicates: " + result);
+    }
+}
