@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string sentence = "I love programming language";
+
+        string[] words = sentence.Split(' ');
+
+        string longest = "";
+
+        foreach (string word in words)
+        {
+            if (word.Length > longest.Length)
+            {
+                longest = word;
+            }
+        }
+
+        Console.WriteLine("Longest word: " + longest);
+    }
+}
