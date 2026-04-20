@@ -1,0 +1,23 @@
+using System;
+
+class Dushyant
+{
+    static void Main()
+    {
+        string str1 = "abcde";
+        string str2 = "cdeab";
+
+        if (str1.Length != str2.Length)
+        {
+            Console.WriteLine("Not Rotation");
+            return;
+        }
+
+        string temp = str1 + str1;
+
+        if (temp.Contains(str2))
+            Console.WriteLine("Rotation");
+        else
+            Console.WriteLine("Not Rotation");
+    }
+}
