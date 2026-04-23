@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        string str = "programming";
+
+        Dictionary<char, int> freq = new Dictionary<char, int>();
+
+        // Step 1: Count frequency
+        foreach (char ch in str)
+        {
+            if (freq.ContainsKey(ch))
+                freq[ch]++;
+            else
+                freq[ch] = 1;
+        }
+
+        int firstMax = 0, secondMax = 0;
+        char secondChar = '\0';
+
+        // Step 2: Find first and second max frequency
+        foreach (var item in freq)
+        {
+            int count = item.Value;
+
+            if (count > firstMax)
+            {
+                secondMax = firstMax;
+                firstMax = count;
+            }
+            else if (count > secondMax && count < firstMax)
+            {
+                secondMax = count;
+            }
+        }
+
+        // Step 3: Get character with secondMax
+        foreach (var item in freq)
+        {
+            if (item.Value == secondMax)
+            {
+                secondChar = item.Key;
+                break;
+            }
+        }
+
+        if (secondChar != '\0')
+            Console.WriteLine("Second most frequent: " + secondChar);
+        else
+            Console.WriteLine("Not found");
+    }
+}
