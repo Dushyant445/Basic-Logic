@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string str = "12345";
+
+        if (string.IsNullOrEmpty(str))
+        {
+            Console.WriteLine("False");
+            return;
+        }
+
+        bool isOnlyDigits = true;
+
+        foreach (char ch in str)
+        {
+            if (!char.IsDigit(ch))
+            {
+                isOnlyDigits = false;
+                break;
+            }
+        }
+
+        Console.WriteLine(isOnlyDigits);
+    }
+}
